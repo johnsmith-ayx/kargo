@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSONWriteConfig",
+  "type": "object",
+  "required": ["path", "data"],
+  "additionalProperties": false,
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Destination file path, relative to the temporary workspace that Kargo provisions for use by the promotion process.",
+      "minLength": 1
+    },
+    "data": {
+      "description": "The value to marshal and write. May be any JSON-compatible value: scalar, object, or array."
+    }
+  }
+}

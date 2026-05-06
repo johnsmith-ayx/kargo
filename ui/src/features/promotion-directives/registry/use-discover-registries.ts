@@ -16,6 +16,7 @@ import helmUpdateChartConfig from '@ui/gen/directives/helm-update-chart-config.j
 import httpConfig from '@ui/gen/directives/http-config.json';
 import jsonParseConfig from '@ui/gen/directives/json-parse-config.json';
 import jsonUpdateConfig from '@ui/gen/directives/json-update-config.json';
+import jsonWriteConfig from '@ui/gen/directives/json-write-config.json';
 import kustomizeBuildConfig from '@ui/gen/directives/kustomize-build-config.json';
 import kustomizeSetImageConfig from '@ui/gen/directives/kustomize-set-image-config.json';
 import tomlParseConfig from '@ui/gen/directives/toml-parse-config.json';
@@ -23,6 +24,7 @@ import tomlUpdateConfig from '@ui/gen/directives/toml-update-config.json';
 import yamlMergeConfig from '@ui/gen/directives/yaml-merge-config.json';
 import yamlParseConfig from '@ui/gen/directives/yaml-parse-config.json';
 import yamlUpdateConfig from '@ui/gen/directives/yaml-update-config.json';
+import yamlWriteConfig from '@ui/gen/directives/yaml-write-config.json';
 
 import { PromotionDirectivesRegistry } from './types';
 
@@ -78,12 +80,20 @@ export const useDiscoverPromotionDirectivesRegistries = (): PromotionDirectivesR
         config: yamlUpdateConfig as unknown as JSONSchema7
       },
       {
+        identifier: 'yaml-write',
+        config: yamlWriteConfig as unknown as JSONSchema7
+      },
+      {
         identifier: 'json-parse',
         config: jsonParseConfig as JSONSchema7
       },
       {
         identifier: 'json-update',
         config: jsonUpdateConfig as unknown as JSONSchema7
+      },
+      {
+        identifier: 'json-write',
+        config: jsonWriteConfig as unknown as JSONSchema7
       },
       {
         identifier: 'toml-parse',

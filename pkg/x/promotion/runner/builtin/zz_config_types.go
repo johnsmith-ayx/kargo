@@ -559,6 +559,15 @@ type JSONUpdate struct {
 	Value interface{} `json:"value"`
 }
 
+type JSONWriteConfig struct {
+	// The value to marshal and write. May be any JSON-compatible value: scalar, object, or
+	// array.
+	Data interface{} `json:"data"`
+	// Destination file path, relative to the temporary workspace that Kargo provisions for use
+	// by the promotion process.
+	Path string `json:"path"`
+}
+
 type KustomizeBuildConfig struct {
 	// OutPath is the file path to write the built manifests to.
 	OutPath string `json:"outPath"`
@@ -744,6 +753,15 @@ type YAMLUpdate struct {
 	Key string `json:"key"`
 	// The new value for the specified key.
 	Value interface{} `json:"value"`
+}
+
+type YAMLWriteConfig struct {
+	// The value to marshal and write. May be any YAML-compatible value: scalar, object, or
+	// array.
+	Data interface{} `json:"data"`
+	// Destination file path, relative to the temporary workspace that Kargo provisions for use
+	// by the promotion process.
+	Path string `json:"path"`
 }
 
 // operator represents a key's relationship to a set of values. Valid operators are In,
